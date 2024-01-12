@@ -1,4 +1,4 @@
-import emailjs-com from "emailjs";
+import emailjs from "emailjs-com";
 import { useState } from "react";
 
 const Contact = () => {
