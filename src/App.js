@@ -16,8 +16,8 @@ function App() {
           <Contact/>
          </div>
         
-        <div class="theme-btn">
-            <i class="fas fa-adjust"></i>
+        <div className="theme-btn">
+            <i className="fas fa-adjust"></i>
         </div>
        </div>
     </div>

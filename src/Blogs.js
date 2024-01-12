@@ -1,15 +1,15 @@
 const Blogs = () => {
     return ( 
     <div>
-         <section class="container" id="blogs">
-            <div class="blogs-content">
-                <div class="main-title">
-                    <h2>My <span>Blogs</span><span class="bg-text">My Blogs</span></h2>
+         <section className="container" id="blogs">
+            <div className="blogs-content">
+                <div className="main-title">
+                    <h2>My <span>Blogs</span><span className="bg-text">My Blogs</span></h2>
                 </div>
-                <div class="blogs">
-                    <div class="blog">
+                <div className="blogs">
+                    <div className="blog">
                         <img src="img/port.jpg" alt=""/>
-                        <div class="blog-text">
+                        <div className="blog-text">
                             <h4>
                                 How to Create Your Own Website
                             </h4>
@@ -18,9 +18,9 @@ const Blogs = () => {
                             </p>
                         </div>
                     </div>
-                    <div class="blog">
+                    <div className="blog">
                         <img src="img/port2.jpg" alt=""/>
-                        <div class="blog-text">
+                        <div className="blog-text">
                             <h4>
                                 Become an Expert in networking
                             </h4>
@@ -29,9 +29,9 @@ const Blogs = () => {
                             </p>
                         </div>
                     </div>
-                    <div class="blog">
+                    <div className="blog">
                         <img src="img/port3.jpg" alt=""/>
-                        <div class="blog-text">
+                        <div className="blog-text">
                             <h4>
                                 Become a Mobile application developer  in 10 Days
                             </h4>
@@ -40,9 +40,9 @@ const Blogs = () => {
                             </p>
                         </div>
                     </div>
-                    <div class="blog">
+                    <div className="blog">
                         <img src="img/port4.jpg" alt=""/>
-                        <div class="blog-text">
+                        <div className="blog-text">
                             <h4>
                                 Cloud computing
                             </h4>
@@ -51,9 +51,9 @@ const Blogs = () => {
                             </p>
                         </div>
                     </div>
-                    <div class="blog">
+                    <div className="blog">
                         <img src="img/port5.jpg" alt=""/>
-                        <div class="blog-text">
+                        <div className="blog-text">
                             <h4>
                                 All you need to know about data science
                             </h4>
@@ -62,9 +62,9 @@ const Blogs = () => {
                             </p>
                         </div>
                     </div>
-                    <div class="blog">
+                    <div className="blog">
                         <img src="img/port6.jpg" alt=""/>
-                        <div class="blog-text">
+                        <div className="blog-text">
                             <h4>
                                 Getting started with embedded systems
                             </h4>
