@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   node: circleci/node@5.0.2
   aws-s3: circleci/aws-s3@3.0.0
-  aws-cloudfront: circleci/aws-cloudfront@0.0.7
+  cloudfront-s3-deploy: trustedshops-public/cloudfront-s3-deploy@3.0.0
 
 jobs:
   build:
@@ -48,10 +48,14 @@ jobs:
           aws-region: $aws_region
 
       # Use AWS CloudFront orb to invalidate cache
-      - aws-cloudfront/invalidate:
-          distribution-id: $cloudfront_distribution_id
-          paths:
-            - '/*'
+      - cloudfront-s3-deploy/sync_and_invalidate:
+          bucket_name: $s3_portfolio_bucket
+          distribution_id: $cloud_distribution_id
+          filters:
+            branches:
+              only:
+                - main
+          name: deploy
 
 workflows:
   version: 2
