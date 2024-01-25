@@ -60,13 +60,11 @@ jobs:
 
 workflows:
   version: 2
-  test-env-vars:
-    jobs:
-      - build:
-          context: portfolio # has an env var called 
+ 
   build_and_deploy:
     jobs:
       - build:
+          context: portfolio
           filters:
             branches:
               only:
