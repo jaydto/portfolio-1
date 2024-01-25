@@ -46,10 +46,11 @@ jobs:
       # Use AWS S3 orb to sync build files to S3 bucket
       - aws-s3/sync:
           from: build/
-          to: s3://<< parameters.context "portfolio" >>/<< parameters.context "portfolio.s3_portfolio_bucket" >>/
-          aws-access-key-id: << parameters.context "portfolio.aws_user" >>
-          aws-secret-access-key: << parameters.context "portfolio.aws_password" >>
-          aws-region: << parameters.context "portfolio.aws_region" >>
+          to: s3://${{ parameters.context "portfolio" }}/${{ parameters.context "portfolio.s3_portfolio_bucket" }}/
+          aws-access-key-id: ${{ parameters.context "portfolio.aws_user" }}
+          aws-secret-access-key: ${{ parameters.context "portfolio.aws_password" }}
+          aws-region: ${{ parameters.context "portfolio.aws_region" }}
+
 
 
 
