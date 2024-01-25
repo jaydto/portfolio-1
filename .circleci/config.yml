@@ -11,14 +11,14 @@ description: >
 
 workflows:
   version: 2
-  test-env-vars:
-    jobs:
-      - build
+  # test-env-vars:
+  #   jobs:
+  #     - build
  
   build_and_deploy:
     jobs:
       - build:
-          context: portfolio
+          # context: portfolio
           filters:
             branches:
               only:
