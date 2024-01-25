@@ -1,0 +1,82 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.2
+  aws-s3: circleci/aws-s3@3.0.0
+  # cloudfront-s3-deploy: trustedshops-public/cloudfront-s3-deploy@3.0.0
+
+description: >
+  Installs aws cli, upload files to s3 and invalidate cloudfront cache. All
+  steps are ran with circleci 
+
+workflows:
+  version: 2
+  test-env-vars:
+    jobs:
+      - build
+ 
+  build_and_deploy:
+    jobs:
+      - build:
+          context: portfolio
+          filters:
+            branches:
+              only:
+                - main
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
+
+
+jobs:
+  build:
+    executor:
+      name: node/default
+
+    steps:
+      - checkout
+
+      # Use Node.js orb to install Node.js and npm
+      - node/install
+
+      # Install dependencies
+      - run:
+          name: Install Dependencies
+          command: npm install
+
+      # Run tests (replace with your actual test command)
+      - run:
+          name: Run Tests
+          command: npm test
+
+      # Build the React app
+      - run:
+          name: Build React App
+          command: npm run build
+
+  deploy:
+    executor:
+      name: node/default
+
+    steps:
+      - checkout
+
+      # Use AWS S3 orb to sync build files to S3 bucket
+      - aws-s3/sync:
+          from: build/
+          to: s3://${s3_portfolio_bucket}/
+          aws-access-key-id: ${aws_user}
+          aws-secret-access-key: ${aws_password}
+          aws-region: ${aws_region}
+
+
+      # Use AWS CloudFront orb to invalidate cache
+      # - cloudfront_invalidate:
+      #     distribution_id: $cloud_distribution_id
+      #     pattern: '*/'
+        
+
