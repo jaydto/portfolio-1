@@ -15,12 +15,20 @@ jobs:
             curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
             sudo apt-get install -y nodejs
 
-      # Install dependencies and build the React app
+      # Install dependencies
       - run:
-          name: Install Dependencies and Build
-          command: |
-            npm install
-            npm run build
+          name: Install Dependencies
+          command: npm install
+
+      # Run tests (replace with your actual test command)
+      - run:
+          name: Run Tests
+          command: npm test
+
+      # Build the React app
+      - run:
+          name: Build React App
+          command: npm run build
 
   deploy:
     docker:
