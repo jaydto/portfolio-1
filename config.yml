@@ -1,0 +1,57 @@
+version: 2.1
+
+jobs:
+  build:
+    machine:
+      image: circleci/classic:latest
+
+    steps:
+      - checkout
+
+      # Install Node.js and npm
+      - run:
+          name: Install Node.js and npm
+          command: |
+            curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+
+      # Install dependencies and build the React app
+      - run:
+          name: Install Dependencies and Build
+          command: |
+            npm install
+            npm run build
+
+  deploy:
+    docker:
+      - image: circleci/aws-cli
+
+    steps:
+      - checkout
+
+      # Deploy to AWS S3
+      - run:
+          name: Deploy to AWS S3
+          command: |
+            aws configure set aws_access_key_id $aws_user
+            aws configure set aws_secret_access_key $aws_password
+            aws configure set default.region $aws_region
+
+            aws s3 sync build/ s3://$s3_portfolio_bucket
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
