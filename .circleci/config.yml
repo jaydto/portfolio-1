@@ -1,19 +1,20 @@
 version: 2.1
 
+orbs:
+  node: circleci/node@4.1.0
+  aws-s3: circleci/aws-s3@3.0.0
+  aws-cloudfront: circleci/aws-cloudfront@0.0.7
+
 jobs:
   build:
-    machine:
-      image: circleci/classic:latest
+    executor:
+      name: node/default
 
     steps:
       - checkout
 
-      # Install Node.js and npm
-      - run:
-          name: Install Node.js and npm
-          command: |
-            curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-            sudo apt-get install -y nodejs
+      # Use Node.js orb to install Node.js and npm
+      - node/install
 
       # Install dependencies
       - run:
@@ -31,21 +32,26 @@ jobs:
           command: npm run build
 
   deploy:
-    docker:
-      - image: circleci/aws-cli
+    executor:
+      name: node/default
 
     steps:
       - checkout
 
-      # Deploy to AWS S3
-      - run:
-          name: Deploy to AWS S3
-          command: |
-            aws configure set aws_access_key_id $aws_user
-            aws configure set aws_secret_access_key $aws_password
-            aws configure set default.region $aws_region
+      # Use AWS S3 orb to sync build files to S3 bucket
+      - aws-s3/sync:
+          from: build/
+          to: s3://$s3_portfolio_bucket/
+          overwrite: true
+          aws-access-key-id: $aws_user
+          aws-secret-access-key: $aws_password
+          aws-region: $aws_region
 
-            aws s3 sync build/ s3://$s3_portfolio_bucket
+      # Use AWS CloudFront orb to invalidate cache
+      - aws-cloudfront/invalidate:
+          distribution-id: $cloudfront_distribution_id
+          paths:
+            - '/*'
 
 workflows:
   version: 2
