@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   node: circleci/node@5.0.2
   aws-s3: circleci/aws-s3@3.0.0
-  cloudfront-s3-deploy: trustedshops-public/cloudfront-s3-deploy@3.0.0
+  # cloudfront-s3-deploy: trustedshops-public/cloudfront-s3-deploy@3.0.0
 
 description: >
   Installs aws cli, upload files to s3 and invalidate cloudfront cache. All
