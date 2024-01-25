@@ -8,7 +8,26 @@ orbs:
 description: >
   Installs aws cli, upload files to s3 and invalidate cloudfront cache. All
   steps are ran with circleci 
-  
+
+workflows:
+  version: 2
+ 
+  build_and_deploy:
+    jobs:
+      - build:
+          context: portfolio
+          filters:
+            branches:
+              only:
+                - main
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
+
 
 jobs:
   build:
@@ -58,21 +77,3 @@ jobs:
       #     pattern: '*/'
         
 
-workflows:
-  version: 2
- 
-  build_and_deploy:
-    jobs:
-      - build:
-          context: portfolio
-          filters:
-            branches:
-              only:
-                - main
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only:
-                - main
