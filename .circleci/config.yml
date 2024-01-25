@@ -11,14 +11,14 @@ description: >
 
 workflows:
   version: 2
-  # test-env-vars:
-  #   jobs:
-  #     - build
+  test-env-vars:
+    jobs:
+      - build
  
   build_and_deploy:
     jobs:
       - build:
-          # context: portfolio
+          context: portfolio
           filters:
             branches:
               only:
@@ -68,10 +68,10 @@ jobs:
       # Use AWS S3 orb to sync build files to S3 bucket
       - aws-s3/sync:
           from: build/
-          to: s3://portfolio-jayd/
-          aws-access-key-id: portfolio+2-at-905418157573
-          aws-secret-access-key: ePbctOhGhnnDAZrIp/qceCY3ckQoankx7wixqEpgvyw=
-          aws-region: us-east-1
+          to: s3://"${s3_portfolio_bucket}"/
+          aws-access-key-id: " ${aws_user}"
+          aws-secret-access-key: "${aws_password}"
+          aws-region: "${aws_region}"
 
 
       # Use AWS CloudFront orb to invalidate cache
