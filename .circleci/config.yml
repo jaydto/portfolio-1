@@ -56,10 +56,21 @@ jobs:
       # Use Node.js orb to install Node.js and npm
       - node/install
 
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package-lock.json" }}
+          - v1-dependencies-
+
+      
       # Install dependencies
       - run:
           name: Install Dependencies
           command: npm install
+      
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
 
       # - save_cache:
       #   key: dependency-cache-{{ checksum "package.json" }}
@@ -74,15 +85,17 @@ jobs:
 
       # Build the React app
       - run:
-          name: Build React App
-          command: npm run build
-          
+          name: Build
+          command: |
+            if [ $CIRCLE_BRANCH = 'circleci-project-setup' ]; then
+              npm run build
+            fi
 
-      - save_cache:
-        key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
-        name: Saving build cache
-        paths:
-          - ~/build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+          
 
   deploy:
     executor:
@@ -93,7 +106,7 @@ jobs:
 
       # Use AWS S3 orb to sync build files to S3 bucket
       - aws-s3/sync:
-          from: ~/build
+          from: .
           to: s3://portfolio-jayd
           aws-access-key-id: aws_user
           aws-secret-access-key: aws_password
