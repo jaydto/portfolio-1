@@ -32,10 +32,11 @@ const About = () => {
                     A Software Engineering graduate with experience in Java, Python, Agile, and a proven track record of delivering projects on time and to high standards. Strong problem-solving and communication skills, with a passion for technology and a desire to continue learning and growing in a dynamic and challenging work environment. Seeking a software engineering role where I can make a meaningful impact and be a valuable asset to the team.
                     </p>
                     <div className="btn-con" onClick={handleDownload}>
-                        <a href="#" className="main-btn">
+                        <a href="/#" className="main-btn">
                             <span className="btn-text">Download CV</span>
                             <span className="btn-icon"><i className="fas fa-download"></i></span>
                         </a>
+                        {/* eslint-disable-line jsx-a11y/anchor-is-valid */}
                     </div>
                 </div>
                 <div className="right-about">

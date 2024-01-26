@@ -22,7 +22,8 @@ const Portfolio = () => {
                         <div className="icons">
                             <a href="https://beyondvas.co/" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
-                            </a>                          
+                            </a>  
+                            {/* eslint-disable-line jsx-a11y/anchor-is-valid */}                        
                         </div>
                     </div>
                 </div>
@@ -36,7 +37,8 @@ const Portfolio = () => {
                         <div className="icons">
                             <a href="https://betnare.com/" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
-                            </a>                          
+                            </a>      
+                            {/* eslint-disable-line jsx-a11y/anchor-is-valid */}                    
                         </div>
                     </div>
                 </div>
@@ -65,9 +67,10 @@ const Portfolio = () => {
                         <h3 style={{color:'black'}}><strong>Netpap</strong></h3>
                         <p className="text-center p-2">A management and Analysis Dashboard</p>
                         <div className="icons">
-                            <a href="#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="/#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
-                            </a>                          
+                            </a>  
+                            {/* eslint-disable-line jsx-a11y/anchor-is-valid */}                        
                         </div>
                     </div>
                 </div>
@@ -79,9 +82,10 @@ const Portfolio = () => {
                         <h3 style={{color:'black'}}><strong>Quicksava Flutter App</strong></h3>
                         <p className="text-center p-2">Mobile app Quicksava</p>
                         <div className="icons">
-                            <a href="#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="/#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
-                            </a>                          
+                            </a>   
+                            {/* eslint-disable-line jsx-a11y/anchor-is-valid */}                       
                         </div>
                     </div>
                 </div> 
@@ -95,12 +99,15 @@ const Portfolio = () => {
                             <a href="https://github.com/jaydto" className="icon">
                                 <i className="fab fa-github"></i>
                             </a>
-                            <a href="#" className="icon">
+                            {/* eslint-disable-line jsx-a11y/anchor-is-valid */}
+                            <a href="/#" className="icon">
                                 <i className="fab fa-behance"></i>
                             </a>
-                            <a href="#" className="icon">
+                            {/* eslint-disable-line jsx-a11y/anchor-is-valid */}
+                            <a href="/#" className="icon">
                                 <i className="fab fa-youtube"></i>
                             </a>
+                            {/* eslint-disable-line jsx-a11y/anchor-is-valid */}
                         </div>
                     </div>
                 </div>
@@ -113,9 +120,10 @@ const Portfolio = () => {
                         <h3 style={{color:'black'}}><strong>Betnare Flutter App</strong></h3>
                         <p className="text-center p-2">Mobile app betnare</p>
                         <div className="icons">
-                            <a href="#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="/#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
-                            </a>                          
+                            </a>  
+                            {/* eslint-disable-line jsx-a11y/anchor-is-valid */}                        
                         </div>
                     </div>
                 </div>              

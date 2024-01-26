@@ -141,28 +141,31 @@ const Contact = () => {
                   >
                     <i className="fab fa-linkedin"></i>
                   </a>
+                  {/* eslint-disable-line jsx-a11y/anchor-is-valid */}
                   <a href="https://github.com/jaydto" target="_blank" rel="noreferrer">
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href="#" target="_blank" rel="noreferrer">
+                  {/* eslint-disable-line jsx-a11y/anchor-is-valid */}
+                  <a href="/#" target="_blank" rel="noreferrer">
                     <i className="fab fa-facebook-f"></i>
                   </a>
-                  <a href="#" target="_blank" rel="noreferrer">
+                  {/* eslint-disable-line jsx-a11y/anchor-is-valid */}
+                  <a href="/#" target="_blank" rel="noreferrer">
                     <i className="fab fa-instagram"></i>
                   </a>
+                  {/* eslint-disable-line jsx-a11y/anchor-is-valid */}
 
-                  <a href="#" target="_blank" rel="noreferrer">
+                  <a href="/#" target="_blank" rel="noreferrer">
                     <i className="fab fa-youtube"></i>
                   </a>
+                  {/* eslint-disable-line jsx-a11y/anchor-is-valid */}
                 </div>
               </div>
             </div>
             <div className="right-contact">
               <form
                 className="contact-form"
-                role="form"
                 method="post"
-                action="#"
                 onSubmit={handleSubmit}
               >
                 <div className="input-control i-c-2">
