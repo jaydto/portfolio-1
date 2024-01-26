@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   node: circleci/node@5.0.2
   aws-s3: circleci/aws-s3@3.0.0
-  # cloudfront: circleci/cloudfront@1.0.1
+  aws-cloudfront: topmonks/aws-cloudfront@1.0.0
 
 description: >
   Installs AWS CLI, uploads files to S3, and invalidates CloudFront cache. All
@@ -24,7 +24,12 @@ parameters:
     default: env_var_name
   cloud_distribution_id:
     type: string
+    description: The distribution's id.
     default: env_var_name
+  
+  paths:
+        type: string
+        description: The space-separated paths to be invalidated.
 
 workflows:
   version: 2
@@ -136,6 +141,8 @@ jobs:
           aws-region: aws_region
 
       # Use AWS CloudFront orb to invalidate cache
-      # - cloudfront/invalidate:
-      #     distribution_id: "${cloud_distribution_id}"
-      #     paths: ["/*"]
+      - run:
+          name: Invalidate Cloudfront distribution cloud_distribution_id
+          command: >
+            aws cloudfront create-invalidation --distribution-id=<<
+            parameters.cloud_distribution_id >> --paths=<< parameters.paths >>
