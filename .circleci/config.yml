@@ -108,6 +108,11 @@ jobs:
           
 
   deploy:
+    working_directory: ~/project
+
+    - attach_workspace:
+          at: .
+
     executor:
       name: node/default
 
@@ -120,7 +125,7 @@ jobs:
           name: List Persisted Files in Build Directory
           command: |
             echo "List of files in the persisted 'build' directory:"
-            ls -R build
+            ls -R .
 
       # Use AWS S3 orb to sync build files to S3 bucket
       - aws-s3/sync:
