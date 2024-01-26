@@ -47,6 +47,8 @@ workflows:
 
 jobs:
   build:
+    docker:
+      - image: cimg/base:stable  # Adjust the base image accordingly
 
     executor:
       name: node/default
@@ -84,10 +86,6 @@ jobs:
               npm run build
             fi
 
-      - save_cache:
-          key: v1-build-{{ .Branch }}-{{ checksum "build/**" }}
-          paths:
-            - build/**
 
       - run:
           name: List Files in Build Directory
@@ -103,12 +101,14 @@ jobs:
 
 
       - persist_to_workspace:
-          root: .
+          root: /
           paths:
             - build  # Only persist the 'build' directory
           
 
   deploy:
+    docker:
+        - image: cimg/base:stable  
 
     executor:
       name: node/default
@@ -122,11 +122,10 @@ jobs:
           name: List Persisted Files in Build Directory
           command: |
             echo "List of files in the persisted 'build' directory:"
-            ls -R .
-
+            ls -R /
       # Use AWS S3 orb to sync build files to S3 bucket
       - aws-s3/sync:
-          from: ~/build
+          from: /
           to: s3://portfolio-jayd
           aws-access-key-id: aws_user
           aws-secret-access-key: aws_password
