@@ -51,7 +51,7 @@ From bits and bytes to user delight, I'm here to make your tech dreams come true
 
                     </p>
                     <div className="btn-con" onClick={handleDownload}>
-                        <a href="" className="main-btn">
+                        <a href="#" className="main-btn">
                             <span className="btn-text">Download CV</span>
                             <span className="btn-icon"><i className="fas fa-download"></i></span>
                         </a>

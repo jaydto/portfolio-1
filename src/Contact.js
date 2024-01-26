@@ -137,21 +137,21 @@ const Contact = () => {
                 <div className="contact-icon">
                   <a
                     href="https://www.linkedin.com/in/john-chege-diversify/"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                   >
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href="https://github.com/jaydto" target="_blank">
+                  <a href="https://github.com/jaydto" target="_blank" rel="noreferrer">
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="#" target="_blank" rel="noreferrer">
                     <i className="fab fa-facebook-f"></i>
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="#" target="_blank" rel="noreferrer">
                     <i className="fab fa-instagram"></i>
                   </a>
 
-                  <a href="#" target="_blank">
+                  <a href="#" target="_blank" rel="noreferrer">
                     <i className="fab fa-youtube"></i>
                   </a>
                 </div>

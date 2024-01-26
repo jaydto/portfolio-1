@@ -41,7 +41,7 @@ const About = () => {
                 <div className="right-about">
                     <div className="about-item">
                         <div className="abt-text">
-                            <p className="large-text">20+</p>
+                            <p className="large-text">40+</p>
                             <p className="small-text">Projects <br /> Completed</p>
                         </div>
                     </div>
@@ -70,6 +70,42 @@ const About = () => {
                 <div className="progress-bars">
                     <div className="progress-bar">
                         <p className="prog-title">Android Kotlin</p>
+                        <div className="progress-con">
+                            <p className="prog-text">80%</p>
+                            <div className="progress">
+                                <span className="html"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-bar">
+                        <p className="prog-title">Flutter</p>
+                        <div className="progress-con">
+                            <p className="prog-text">80%</p>
+                            <div className="progress">
+                                <span className="html"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-bar">
+                        <p className="prog-title">Springboot</p>
+                        <div className="progress-con">
+                            <p className="prog-text">80%</p>
+                            <div className="progress">
+                                <span className="html"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-bar">
+                        <p className="prog-title">Django/Flask</p>
+                        <div className="progress-con">
+                            <p className="prog-text">80%</p>
+                            <div className="progress">
+                                <span className="html"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="progress-bar">
+                        <p className="prog-title">React Native</p>
                         <div className="progress-con">
                             <p className="prog-text">80%</p>
                             <div className="progress">
@@ -141,9 +177,9 @@ const About = () => {
                         <i className="fas fa-briefcase"></i>
                     </div>
                     <p className="tl-duration">May 2022 - August 2022</p>
-                    <h5>IT intern<span> - Maseno University</span></h5>
+                    <h5>Software Engineering intern<span> -Beyond Intoch</span></h5>
                     <p>
-                        Responsible for maintaining IT infrasctructure such as the ERP and MIS in the institution
+                        Responsible for development and maintainance of  infrasctructure such as the ERP , POS and Webservers in the orhganization
                     </p>
                 </div>
                 <div className="timeline-item">
@@ -171,7 +207,7 @@ const About = () => {
                         <i className="fas fa-briefcase"></i>
                     </div>
                     <p className="tl-duration">May 2021 - October 2021</p>
-                    <h5>Flask Python<span> - Great Learning</span></h5>
+                    <h5>Flask/Django Python<span> - Great Learning</span></h5>
                     <p>
                         Built web applications with the flask framework built on python
                     </p>
