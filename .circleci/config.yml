@@ -87,7 +87,7 @@ jobs:
       - run:
           name: Build
           command: |
-            if [ $CIRCLE_BRANCH = 'circleci-project-setup' ]; then
+            if [ $CIRCLE_BRANCH = 'main' ]; then
               npm run build
             fi
 
