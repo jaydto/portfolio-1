@@ -83,7 +83,7 @@ jobs:
       - save_cache:
           key: v1-build-{{ .Branch }}-{{ checksum "build/**" }}
           paths:
-            - build
+            - build/**
 
       - persist_to_workspace:
           root: .
