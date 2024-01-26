@@ -20,7 +20,7 @@ const Portfolio = () => {
                         <h3 style={{color:'black'}}><strong>Beyond Vas</strong></h3>
                         <p className="text-center p-2">PRSP website, SMS,SHORTCODES, USSD</p>
                         <div className="icons">
-                            <a href="https://beyondvas.co/" target="blank" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="https://beyondvas.co/" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
                             </a>                          
                         </div>
@@ -34,7 +34,7 @@ const Portfolio = () => {
                         <h3 style={{color:'black'}}><strong>Betnare</strong></h3>
                         <p className="text-center p-2">Betting Games Website, casino, fast games, virtual games</p>
                         <div className="icons">
-                            <a href="https://betnare.com/" target="blank" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="https://betnare.com/" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
                             </a>                          
                         </div>
@@ -50,7 +50,7 @@ const Portfolio = () => {
                         <h3 style={{color:'black'}}><strong>Quicksava</strong></h3>
                         <p className="text-center p-2">A loans and money lending schemes Website</p>
                         <div className="icons">
-                            <a href="https://quicksava.co.ke/" target="blank" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="https://quicksava.co.ke/" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
                             </a>                          
                         </div>
@@ -65,7 +65,7 @@ const Portfolio = () => {
                         <h3 style={{color:'black'}}><strong>Netpap</strong></h3>
                         <p className="text-center p-2">A management and Analysis Dashboard</p>
                         <div className="icons">
-                            <a href="#" target="blank" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
                             </a>                          
                         </div>
@@ -79,7 +79,7 @@ const Portfolio = () => {
                         <h3 style={{color:'black'}}><strong>Quicksava Flutter App</strong></h3>
                         <p className="text-center p-2">Mobile app Quicksava</p>
                         <div className="icons">
-                            <a href="#" target="blank" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
                             </a>                          
                         </div>
@@ -113,7 +113,7 @@ const Portfolio = () => {
                         <h3 style={{color:'black'}}><strong>Betnare Flutter App</strong></h3>
                         <p className="text-center p-2">Mobile app betnare</p>
                         <div className="icons">
-                            <a href="#" target="blank" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
                             </a>                          
                         </div>
