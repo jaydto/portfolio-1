@@ -31,7 +31,6 @@ parameters:
     description: The space-separated paths to be invalidated.
     default: env_var_name 
 
-
 workflows:
   version: 2
   
