@@ -80,6 +80,11 @@ jobs:
               npm run build
             fi
 
+      - save_cache:
+          key: v1-build-{{ .Branch }}-{{ checksum "build/**" }}
+          paths:
+            - build
+
       - persist_to_workspace:
           root: .
           paths:
