@@ -47,6 +47,8 @@ workflows:
 
 jobs:
   build:
+    working_directory: ~/projects
+
     executor:
       name: node/default
 
@@ -108,7 +110,7 @@ jobs:
           
 
   deploy:
-    working_directory: ~/project
+    working_directory: ~/projects
 
     - attach_workspace:
           at: .
