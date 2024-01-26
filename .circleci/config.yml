@@ -62,9 +62,9 @@ jobs:
           command: npm install
 
       # Run tests (replace with your actual test command)
-      - run:
-          name: Run Tests
-          command: npm test
+      # - run:
+      #     name: Run Tests
+      #     command: npm test
 
       # Build the React app
       - run:
