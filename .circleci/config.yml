@@ -108,13 +108,17 @@ jobs:
 
   deploy:
     docker:
-        - image: cimg/base:stable  
+      - image: cimg/base:stable  
+
+    
 
     executor:
       name: node/default
 
     steps:
       - checkout
+      - attach_workspace:
+          at: /
 
 
       # List the persisted files in the 'build' directory
