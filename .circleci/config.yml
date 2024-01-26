@@ -144,5 +144,4 @@ jobs:
       - run:
           name: Invalidate Cloudfront distribution cloud_distribution_id
           command: >
-            aws cloudfront create-invalidation --distribution-id=<<
-            parameters.cloud_distribution_id >> --paths=<< parameters.path >>
+            aws cloudfront create-invalidation --distribution-id=cloud_distribution_id --paths=path
