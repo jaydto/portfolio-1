@@ -100,6 +100,7 @@ jobs:
             echo "List of directories in the build directory:"
             find build -type d
 
+
       - persist_to_workspace:
           root: .
           paths:
@@ -112,6 +113,16 @@ jobs:
 
     steps:
       - checkout
+
+      - attach_workspace:
+          at: /workspace
+
+      # List the persisted files in the 'build' directory
+      - run:
+          name: List Persisted Files in Build Directory
+          command: |
+            echo "List of files in the persisted 'build' directory:"
+            ls -R /workspace/build
 
       # Use AWS S3 orb to sync build files to S3 bucket
       - aws-s3/sync:
