@@ -25,9 +25,8 @@ parameters:
   cloud_distribution_id:
     type: string
     description: The distribution's id.
-    default: env_var_name
-  
-  paths:
+    default: env_var_name 
+  path:
         type: string
         description: The space-separated paths to be invalidated.
 
@@ -145,4 +144,4 @@ jobs:
           name: Invalidate Cloudfront distribution cloud_distribution_id
           command: >
             aws cloudfront create-invalidation --distribution-id=<<
-            parameters.cloud_distribution_id >> --paths=<< parameters.paths >>
+            parameters.cloud_distribution_id >> --paths=<< parameters.path >>
