@@ -88,6 +88,18 @@ jobs:
           paths:
             - build/**
 
+      - run:
+          name: List Files in Build Directory
+          command: ls -R build
+
+      - run:
+          name: List Files in Build Directory Now
+          command: |
+            echo "List of files in the build directory:"
+            find build -type f
+            echo "List of directories in the build directory:"
+            find build -type d
+
       - persist_to_workspace:
           root: .
           paths:
