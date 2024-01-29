@@ -167,7 +167,7 @@ const About = () => {
                     <div className="tl-icon">
                         <i className="fas fa-briefcase"></i>
                     </div>
-                    <p className="tl-duration">2019 - present</p>
+                    <p className="tl-duration"></p>
                     <h5>Software Engineering<span> - Kisii University</span></h5>
                     <p>
                         Handled the entire software development cycle and related projects

@@ -117,10 +117,10 @@ const Portfolio = () => {
                         <img src="img/mobilebetnare.jpeg" alt=""/>
                     </div>
                     <div className="hover-items p-3">
-                        <h3 style={{color:'black'}}><strong>Betnare Flutter App</strong></h3>
+                        <h3 style={{color:'black'}}><strong>Betnare  App</strong></h3>
                         <p className="text-center p-2">Mobile app betnare</p>
                         <div className="icons">
-                            <a href="/#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="https://play.google.com/store/apps/details?id=com.betnare.app" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
                             </a>  
                             {/* eslint-disable-line jsx-a11y/anchor-is-valid */}                        
