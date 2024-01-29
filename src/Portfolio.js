@@ -67,7 +67,7 @@ const Portfolio = () => {
                         <h3 style={{color:'black'}}><strong>Netpap</strong></h3>
                         <p className="text-center p-2">A management and Analysis Dashboard</p>
                         <div className="icons">
-                            <a href="/#" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
+                            <a href="https://netpap.co.ke/" target="_blank" rel="noreferrer" style={{color:"blue", marginTop:'.5cm'}}>
                                 Click to View Project
                             </a>  
                             {/* eslint-disable-line jsx-a11y/anchor-is-valid */}                        
