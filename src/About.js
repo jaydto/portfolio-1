@@ -48,7 +48,7 @@ const About = () => {
                     </div>
                     <div className="about-item">
                         <div className="abt-text">
-                            <p className="large-text">4+</p>
+                            <p className="large-text">5+</p>
                             <p className="small-text">Years of <br /> experience</p>
                         </div>
                     </div>
